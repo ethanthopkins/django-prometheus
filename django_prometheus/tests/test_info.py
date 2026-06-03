@@ -1,7 +1,7 @@
 from django import get_version
+from django_prometheus.info import django_info
 
 def test_info_metric():
-    from django_prometheus.info import django_info
     assert django_info._name == "django"
     assert django_info._documentation == "Django version information"
     assert django_info._value == {"major": get_version().split('.')[0], 
